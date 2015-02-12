@@ -1,3 +1,25 @@
 // Place all the styles related to the Programs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.index-item {
+  padding: 20px 0px;
+  border-top: 1px solid black;
+}
+
+.index-item-part {
+  padding: 10px; 
+}
+
+/*.js-panel {
+  display: none; 
+}
+.js-trigger {
+  cursor: pointer;
+}*/

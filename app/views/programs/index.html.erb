@@ -1,12 +1,24 @@
-<ul>
-<% @programs.each do |program| %>
-  <li>
-    <%= program.title %>
-    <ul>
-      <% program.parts.each do |part| %>
-        <li><%= part.title %></li>
-      <% end %>
-    </ul>
-  </li>
-<% end %>
+<h1>Program Index</h1>
+<p>These are all the programs you have to chose from!</p>
+
+<ul class="index">
+  <% @programs.each do |program| %>
+    <li class="js-accordion index-item">
+      <span class="js-trigger"><%= program.title %></span>
+      <ul class="js-panel">
+        <% program.parts.each do |part| %>
+          <li class="index-item-part">
+            <%= "#{part.title} (#{pluralize(part.episodes.count, 'episode')})" %>
+            <ul>
+              <li>
+                <% part.episodes.each do |episode| %>
+                  <span><%= episode.title %></span>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
 </ul>
