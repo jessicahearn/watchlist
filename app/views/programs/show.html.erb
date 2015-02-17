@@ -1,0 +1,16 @@
+<h1><%= @program.title %></h1>
+<%= link_to "Back to Program Index", programs_path, class: "btn" %>
+<ul>
+  <% @program.parts.each do |part| %>
+    <li class="index-item-part">
+      <%= "#{part.title} (#{pluralize(part.episodes.count, 'episode')})" %>
+      <ul>
+        <li>
+          <% part.episodes.each do |episode| %>
+            <span><%= episode.title %></span>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>

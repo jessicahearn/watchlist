@@ -2,24 +2,106 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//VARS
+$DARK_BLUE: #00008B;
+$MED_BLUE: #4169E1;
+
+$LIGHT_GREY: #DCDCDC;
+
+
+//MIXINS
+@mixin clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+
+//GLOBAL
+body {
+  font-family: "Nimbus Sans L", "URW Gothic L", Verdana, Tahoma, Helvetica, "Lucida Grande", Geneva, "DejaVu Sans", "Microsoft Sans Serif", sans-serif;
+  font-size: 13px;
+}
+
 ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
 
+a {
+  color: $MED_BLUE;
+  text-decoration: none;
+}
+
+
+//SITE-HD obj
+.site-hd {
+  padding: 10px;
+  color: #ffffff;
+  background: $DARK_BLUE;
+  @include clearfix;
+  //clearfix
+}
+
+.site-hd-logo {
+  display: inline-block;
+  font-size: 150%;
+  font-weight: bold; 
+}
+
+.site-hd-nav {
+  display: inline-block; 
+  float: right;
+}
+
+
+//mainNav obj
+.mainNav {
+  font-weight: bold;
+  @include clearfix;
+  //clearfix
+}
+
+.mainNav > * {
+  float: left;
+  padding: 5px 10px;
+}
+
+
+//INDEX obj
 .index-item {
   padding: 20px 0px;
-  border-top: 1px solid black;
+  border-top: 1px solid $LIGHT_GREY;
+}
+
+.index-item-title {
+  color: $DARK_BLUE;
+}
+
+.index-item-controls {
+  float: right;
+  display: inline-block;
 }
 
 .index-item-part {
   padding: 10px; 
 }
 
+
+//JS ACCORDION
 .js-panel {
   display: none; 
 }
 .js-trigger {
   cursor: pointer;
 }
+
+
+
+//BTN obj
+.btn {
+  padding: 5px 10px;
+  color: $MED_BLUE;
+  background: $DARK_BLUE;
+}
+
