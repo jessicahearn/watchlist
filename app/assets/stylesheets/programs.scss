@@ -100,8 +100,28 @@ a {
 
 //BTN obj
 .btn {
+  display: inline-block;
   padding: 5px 10px;
   color: $MED_BLUE;
   background: $DARK_BLUE;
 }
 
+
+
+//MARKER obj
+.marker {
+  height: 20px; 
+}
+
+.marker-ep {
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  border: 1px solid #000000;
+  margin-right: 0px;
+  cursor: pointer;
+}
+
+.marker-ep_isCompleted {
+  background: $MED_BLUE;
+}

@@ -155,7 +155,7 @@ jinGKSmovie = WatchMarkerPart.create(watch_marker_id: jinGKS.id, part_id: gksMov
 #
 
 #Kame Gokusen
-kameGKSs01e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E01.id)
+kameGKSs01e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E01.id, completed: true)
 kameGKSs01e02 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E02.id)
 kameGKSs01e03 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E03.id)
 kameGKSs01e04 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E04.id)
@@ -166,7 +166,7 @@ kameGKSs01e08 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, e
 kameGKSs01e09 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E09.id)
 kameGKSs01e10 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksS01E10.id)
 
-kameGKSsp01e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs01.id, episode_id: gksSP01E01.id)
+kameGKSsp01e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSsp01.id, episode_id: gksSP01E01.id)
 
 kameGKSs02e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs02.id, episode_id: gksS02E01.id)
 kameGKSs02e02 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs02.id, episode_id: gksS02E02.id)
@@ -179,7 +179,7 @@ kameGKSs02e08 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs02.id, e
 kameGKSs02e09 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs02.id, episode_id: gksS02E09.id)
 kameGKSs02e10 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs02.id, episode_id: gksS02E10.id)
 
-kameGKSsp02e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs02.id, episode_id: gksSP02E01.id)
+kameGKSsp02e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSsp02.id, episode_id: gksSP02E01.id)
 
 kameGKSs03e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs03.id, episode_id: gksS03E01.id)
 kameGKSs03e02 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs03.id, episode_id: gksS03E02.id)
@@ -192,7 +192,7 @@ kameGKSs03e08 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs03.id, e
 kameGKSs03e09 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs03.id, episode_id: gksS03E09.id)
 kameGKSs03e10 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs03.id, episode_id: gksS03E10.id)
 
-kameGKSsp03e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSs03.id, episode_id: gksSP03E01.id)
+kameGKSsp03e01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSsp03.id, episode_id: gksSP03E01.id)
 
 kameGKSmovieE01 = WatchMarkerEpisode.create(watch_marker_part_id: kameGKSmovie.id, episode_id: gksMovieE01.id)
 
@@ -208,7 +208,7 @@ jinGKSs01e08 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs01.id, epi
 jinGKSs01e09 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs01.id, episode_id: gksS01E09.id)
 jinGKSs01e10 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs01.id, episode_id: gksS01E10.id)
 
-jinGKSsp01e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs01.id, episode_id: gksSP01E01.id)
+jinGKSsp01e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSsp01.id, episode_id: gksSP01E01.id)
 
 jinGKSs02e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs02.id, episode_id: gksS02E01.id)
 jinGKSs02e02 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs02.id, episode_id: gksS02E02.id)
@@ -221,7 +221,7 @@ jinGKSs02e08 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs02.id, epi
 jinGKSs02e09 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs02.id, episode_id: gksS02E09.id)
 jinGKSs02e10 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs02.id, episode_id: gksS02E10.id)
 
-jinGKSsp02e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs02.id, episode_id: gksSP02E01.id)
+jinGKSsp02e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSsp02.id, episode_id: gksSP02E01.id)
 
 jinGKSs03e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksS03E01.id)
 jinGKSs03e02 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksS03E02.id)
@@ -234,6 +234,6 @@ jinGKSs03e08 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, epi
 jinGKSs03e09 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksS03E09.id)
 jinGKSs03e10 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksS03E10.id)
 
-jinGKSsp03e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksSP03E01.id)
+jinGKSsp03e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSspgksSP01E0103.id, episode_id: gksSP03E01.id)
 
 jinGKSmovieE01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSmovie.id, episode_id: gksMovieE01.id)

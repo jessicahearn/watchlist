@@ -1,0 +1,35 @@
+<h1><%= @user.name %></h1>
+<p>These are the shows that <%= @user.name %> is watching.</p>
+<%= link_to "Back to User Index", users_path, class: "btn" %>
+<ul class="index">
+  <% @user.watch_markers.each do |marker| %>
+    <li class="js-accordion index-item">
+      <% @program = Program.find(marker.program_id) %>
+      <span class="js-trigger index-item-title"><%= @program.title %></span>
+      <ul class="js-panel">
+        <% marker.watch_marker_parts.each do |part_marker| %>
+          <li class="index-item-part">
+            <% @part = Part.find(part_marker.part_id) %>
+            <%= "#{@part.title} (#{pluralize(@part.episodes.count, 'episode')})" %>
+            <ul>
+              <li class="marker">
+                <% part_marker.watch_marker_episodes.each do |episode_marker| %>
+                  <% @episode = Episode.find(episode_marker.episode_id) %>
+                  <% if !episode_marker.completed %>
+                  <span class="marker-ep"></span>
+                  <% elsif episode_marker.completed %>
+                  <span class="marker-ep marker-ep_isCompleted"></span>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<script type="text/javascript">
+  accordion = new Accordion();
+</script>

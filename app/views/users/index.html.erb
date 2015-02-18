@@ -1,0 +1,11 @@
+<h1>User Index</h1>
+
+<ul class="index">
+  <% @users.each do |user| %>
+    <li class="index-item">
+      <span class="index-item-title">
+        <%= link_to user.name, user_path(user) %>
+      </span>
+    </li>
+  <% end %>
+</ul>
