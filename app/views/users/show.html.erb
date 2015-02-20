@@ -13,12 +13,8 @@
             <% @part = Part.find(part_marker.part_id) %>
             <%= "#{@part.title} (#{pluralize(@part.episodes.count, 'episode')})" %>
             <ul>
-              <li class="marker">
-                <% part_marker.watch_marker_episodes.each do |episode_marker| %>
-                    <% @episode = Episode.find(episode_marker.episode_id) %>
-
-                    <%= link_to @episode.sequence_index, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep", remote: true %>
-                <% end %>
+              <li id="ajax" class="marker">
+                <%= render 'episodes', part_marker: part_marker %>
               </li>
             </ul>
           </li>
