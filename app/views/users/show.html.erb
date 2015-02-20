@@ -7,7 +7,7 @@
       <% @program = Program.find(marker.program_id) %>
       <span class="js-trigger index-item-title"><%= @program.title %></span>
       <div><%= marker.notes %></div>
-      <ul class="js-panel">
+      <ul class="">
         <% marker.watch_marker_parts.each do |part_marker| %>
           <li class="index-item-part">
             <% @part = Part.find(part_marker.part_id) %>
@@ -25,5 +25,6 @@
 </ul>
 
 <script type="text/javascript">
-  accordion = new Accordion();
+  var accordion = new Accordion();
 </script>
+
