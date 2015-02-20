@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   
   resources :programs
   resources :users
+  resources :watch_marker_episodes do
+    get 'toggle_completed', on: :member
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

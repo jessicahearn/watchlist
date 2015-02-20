@@ -127,7 +127,7 @@ jin = User.create(name: 'Jin', email:'aquaneesha@carshrimp.com')
 kameGKS = WatchMarker.create(user_id: kame.id, program_id: gokusen.id, notes: 'Ano toki no ano basho, kienai kono kizuna.')
 kameHYD = WatchMarker.create(user_id: kame.id, program_id: hanadan.id, notes: 'Someone left a cake out in the rain.')
 jinGKS = WatchMarker.create(user_id: jin.id, program_id: gokusen.id, notes: 'Formation H!')
-jinGKS = WatchMarker.create(user_id: jin.id, program_id: yamanade.id, notes: 'Kimi ga kirai na kimi ga suki...')
+jinYN = WatchMarker.create(user_id: jin.id, program_id: yamanade.id, notes: 'Kimi ga kirai na kimi ga suki...')
 
 
 #
@@ -234,6 +234,6 @@ jinGKSs03e08 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, epi
 jinGKSs03e09 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksS03E09.id)
 jinGKSs03e10 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSs03.id, episode_id: gksS03E10.id)
 
-jinGKSsp03e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSspgksSP01E0103.id, episode_id: gksSP03E01.id)
+jinGKSsp03e01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSsp03.id, episode_id: gksSP03E01.id)
 
 jinGKSmovieE01 = WatchMarkerEpisode.create(watch_marker_part_id: jinGKSmovie.id, episode_id: gksMovieE01.id)

@@ -6,6 +6,7 @@
     <li class="js-accordion index-item">
       <% @program = Program.find(marker.program_id) %>
       <span class="js-trigger index-item-title"><%= @program.title %></span>
+      <div><%= marker.notes %></div>
       <ul class="js-panel">
         <% marker.watch_marker_parts.each do |part_marker| %>
           <li class="index-item-part">
@@ -16,9 +17,11 @@
                 <% part_marker.watch_marker_episodes.each do |episode_marker| %>
                   <% @episode = Episode.find(episode_marker.episode_id) %>
                   <% if !episode_marker.completed %>
-                  <span class="marker-ep"></span>
+                  <%= link_to @episode.title, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep", remote: true %>
+                  <!--<span class="marker-ep"></span>-->
                   <% elsif episode_marker.completed %>
-                  <span class="marker-ep marker-ep_isCompleted"></span>
+                  <%= link_to @episode.title, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep marker-ep_isCompleted", remote: true %>
+                  <!--<span class="marker-ep marker-ep_isCompleted"></span>-->
                   <% end %>
                 <% end %>
               </li>
