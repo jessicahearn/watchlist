@@ -1,8 +1,8 @@
 <% part_marker.watch_marker_episodes.joins(:episode).order("episodes.sequence_index asc").each do |episode_marker| %>
   <% @episode = Episode.find(episode_marker.episode_id) %>
   <% if (!episode_marker.completed) %>
-    <%= link_to @episode.sequence_index, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep" %>
+    <%= link_to @episode.sequence_index, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep", remote: true %>
   <% elsif (episode_marker.completed) %>
-    <%= link_to @episode.sequence_index, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep marker-ep_isCompleted" %>
+    <%= link_to @episode.sequence_index, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep marker-ep_isCompleted", remote: true %>
   <% end %>
 <% end %>

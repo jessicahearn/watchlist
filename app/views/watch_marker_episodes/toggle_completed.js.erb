@@ -1,8 +1,8 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
-$("#ajax").html("<%= escape_javascript(render('users/episodes') %>"); /*the render part of this still doesn't work*/
 
+$("#ajax-part-marker-<%= @part.id %>").html("<%= escape_javascript(render('users/episodes', part_marker: @part)) %>");
 
 
 console.log('working');
