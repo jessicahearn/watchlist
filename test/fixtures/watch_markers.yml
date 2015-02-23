@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  program_id: 1
-  notes: MyText
+bem_marker:
+  user: kame
+  program: bem
+  notes: Bempants
 
-two:
-  user_id: 1
-  program_id: 1
-  notes: MyText
+yuuki_marker:
+  user: jin
+  program: yuuki
+  notes: I will never ever watch this

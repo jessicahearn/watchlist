@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  format: MyString
+bem:
+  title: Yokai Ningen Bem
+  description: Three monsters wander the earth helping humans while searching for their own humanity
+  format: Renzoku
 
-two:
-  title: MyString
-  description: MyText
-  format: MyString
+yuuki:
+  title: Yuuki
+  description: Horrible sad things happen
+  format: Tanpatsu

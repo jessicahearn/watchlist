@@ -3,8 +3,9 @@ require 'test_helper'
 class PartTest < ActiveSupport::TestCase
   
   def setup
-    @program = Program.new(title: 'Yokai Ningen Bem', description: 'Three monsters wander the earth helping humans while searching for their own humanity', format: 'Renzoku')
-    @program.save
+    #@program = Program.new(title: 'Yokai Ningen Bem', description: 'Three monsters wander the earth helping humans while searching for their own humanity', format: 'Renzoku')
+    #@program.save
+    @program = programs(:bem)
     @part = @program.parts.create(title: 'Series 1')
   end
   

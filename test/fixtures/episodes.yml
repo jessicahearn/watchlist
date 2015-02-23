@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  length: MyString
-  part_id: 1
+bem_ep1:
+  title: Episode 1
+  description: New folks in town.
+  length: 3493
+  part: bem_series1
 
-two:
-  title: MyString
-  description: MyText
-  length: MyString
-  part_id: 1
+bem_ep2:
+  title: Episode 2
+  description: Other stuff happens
+  length: 2674
+  part: bem_series1

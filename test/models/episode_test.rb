@@ -3,10 +3,11 @@ require 'test_helper'
 class EpisodeTest < ActiveSupport::TestCase
   
   def setup
-    @program = Program.new(title: 'Yokai Ningen Bem', description: 'Three monsters wander the earth helping humans while searching for their own humanity', format: 'Renzoku')
-    @program.save
-    @part = @program.parts.create(title: 'Series 1')
-    @part.save
+    #@program = Program.new(title: 'Yokai Ningen Bem', description: 'Three monsters wander the earth helping humans while searching for their own humanity', format: 'Renzoku')
+    #@program.save
+    #@part = @program.parts.create(title: 'Series 1')
+    #@part.save
+    @part = parts(:bem_series1)
     @episode = @part.episodes.create(title: 'Episode 1', description: 'New folks in town', length: 3056)
   end
   

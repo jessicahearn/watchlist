@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  program_id: 1
+bem_series1:
+  title: Series 1
+  program: bem
 
-two:
-  title: MyString
-  program_id: 1
+bem_movie:
+  title: Yokai Ningen Bem The Movie
+  program: bem
+
+yuuki_special:
+  title: Yuuki special
+  program: yuuki
