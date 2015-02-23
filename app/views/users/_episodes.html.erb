@@ -1,6 +1,3 @@
-THIS IS HERE
-
-
 <% part_marker.watch_marker_episodes.joins(:episode).order("episodes.sequence_index asc").each do |episode_marker| %>
   <% @episode = Episode.find(episode_marker.episode_id) %>
   <% if (!episode_marker.completed) %>

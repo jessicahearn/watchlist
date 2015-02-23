@@ -7,9 +7,5 @@ class WatchMarkerEpisodesController < ApplicationController
     @user = User.find(@marker.user_id)
     @ep.toggle!(:completed)
     redirect_to @user
-    #render nothing: true
-    #redirect_to do |format|
-     # format.js
-    #end
   end
 end

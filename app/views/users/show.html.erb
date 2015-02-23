@@ -13,7 +13,7 @@
             <% @part = Part.find(part_marker.part_id) %>
             <%= "#{@part.title} (#{pluralize(@part.episodes.count, 'episode')})" %>
             <ul>
-              <li id="ajax" class="marker">
+              <li class="marker">
                 <%= render 'episodes', part_marker: part_marker %>
               </li>
             </ul>
