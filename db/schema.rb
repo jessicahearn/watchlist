@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220162359) do
+ActiveRecord::Schema.define(version: 20150224171858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150220162359) do
   create_table "episodes", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "length"
+    t.integer  "time"
     t.integer  "part_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150220162359) do
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.boolean  "completed",            default: false
+    t.integer  "elapsed",              default: 0
   end
 
   add_index "watch_marker_episodes", ["episode_id"], name: "index_watch_marker_episodes_on_episode_id", using: :btree
