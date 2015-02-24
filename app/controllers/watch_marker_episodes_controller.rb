@@ -1,5 +1,14 @@
 class WatchMarkerEpisodesController < ApplicationController
   
+  def update
+    @ep = WatchMarkerEpisode.find(params[:id])
+    @ep_source = Episode.find(@ep.episode_id)
+    @part = WatchMarkerPart.find(@ep.watch_marker_part_id)
+    @marker = WatchMarker.find(@part.watch_marker_id)
+    @user = User.find(@marker.user_id)
+    redirect_to @user
+  end
+  
   def toggle_completed
     @ep = WatchMarkerEpisode.find(params[:id])
     @ep_source = Episode.find(@ep.episode_id)
