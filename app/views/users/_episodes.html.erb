@@ -7,7 +7,7 @@
     <div class="marker-ep-status marker-ep-status_<%= ((episode_marker.elapsed.to_f / @episode.time) * 100).round %>of100"></div>
   </div>
   
-  <%= form_for episode_marker do |f| %>
+  <%= form_for episode_marker, remote: true do |f| %>
     <%= f.text_field :elapsed, class: "js-echo_#{episode_marker.id}", value: format_as_timecode(episode_marker.elapsed) %>
     <%= f.submit "Save", class: "js-echo-submit_#{episode_marker.id}" %>
   <% end %>

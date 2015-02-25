@@ -1,0 +1,7 @@
+/*<% flash.each do |type, message| %>
+  $('#flash_messages').html('<%= message.html_safe %>')
+<% end %>*/
+
+
+
+$("#ajax-part-marker-<%= @part.id %>").html("<%= escape_javascript(render('users/episodes', part_marker: @part)) %>");

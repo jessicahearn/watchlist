@@ -16,7 +16,11 @@ class WatchMarkerEpisodesController < ApplicationController
     else
       flash[:danger] = "Please enter a valid timecode"
     end
-    redirect_to @user
+    #redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js
+    end
   end
   
   def toggle_completed
@@ -42,6 +46,7 @@ class WatchMarkerEpisodesController < ApplicationController
   
   
   def timecode_format_valid(input)
-    /^(\d:[0-5]|[0-5]?)\d:[0-5]\d$/.match(input)
+    /\A(\d:[0-5]|[0-5]?)\d:[0-5]\d\z/.match(input)
   end
+    
 end
