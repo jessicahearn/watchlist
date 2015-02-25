@@ -8,9 +8,21 @@
   </div>
   
   <%= form_for episode_marker do |f| %>
-    <%= f.text_field :elapsed, value: format_as_timecode(episode_marker.elapsed) %>
-    <%= f.submit "Save" %>
+    <%= f.text_field :elapsed, class: "js-echo_#{episode_marker.id}", value: format_as_timecode(episode_marker.elapsed) %>
+    <%= f.submit "Save", class: "js-echo-submit_#{episode_marker.id}" %>
   <% end %>
-  <div><span><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %></div>
-  <div><span><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %></div>
+  <div><span class="js-enter_<%= episode_marker.id %>"><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %></div>
+
+<script>
+  /*$(".js-enter_<%= episode_marker.id %>").val($(".js-enter_<%= episode_marker.id %>").html());
+  console.log($(".js-enter_<%= episode_marker.id %>").val());
+  $(".js-enter_<%= episode_marker.id %>").on("change", function() {
+    console.log($(this).val());
+    $(".js-echo_<%= episode_marker.id %>").val($(this).html());
+  });*/
+  //This script is not currently working -- putting this feature on hold
+</script>
+
 <% end %>
+
+

@@ -86,7 +86,7 @@ gksS03E10 = Episode.create(title: 'Episode 10', description: '', time: 2963, par
 
 gksSP03E01 = Episode.create(title: 'Special 3', description: '', time: 3128, part_id: gksSP03.id, sequence_index: 1)
 
-gksMovieE01 = Episode.create(title: 'Gokusen the Movie', description: '', time: 3128, part_id: gksMovie.id, sequence_index: 1)
+gksMovieE01 = Episode.create(title: 'Gokusen the Movie', description: '', time: 5483, part_id: gksMovie.id, sequence_index: 1)
 
 #Hana Yori Dango
 hydS01E01 = Episode.create(title: 'Episode 1', description: '', time: 3128, part_id: hydS01.id, sequence_index: 1)
