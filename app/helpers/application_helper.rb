@@ -20,6 +20,11 @@ module ApplicationHelper
     seconds.to_i
   end
   
+  def percent_as_decimal(string)
+    percent = string.tr('%', '')
+    decimal = percent.to_f / 100
+  end
+  
   def total_time_in_part(part)
     @part = part
     @episodes = @part.episodes

@@ -13,6 +13,10 @@ class EpisodeMarkersController < ApplicationController
       else
         flash[:danger] = "Please enter a valid timecode"
       end
+    elsif percent_format_valid(params[:episode_marker][:elapsed])
+      @episode_marker.elapsed = (@episode.time * view_context.percent_as_decimal(params[:episode_marker][:elapsed])).round
+      @episode_marker.save
+      #puts 'working'
     else
       flash[:danger] = "Please enter a valid timecode"
     end
@@ -47,6 +51,10 @@ class EpisodeMarkersController < ApplicationController
   
   def timecode_format_valid(input)
     /\A(\d\d:[0-5]|\d:[0-5]|[0-5]?)\d:[0-5]\d\z/.match(input)
+  end
+  
+  def percent_format_valid(input)
+    /\A(100|\d?\d)%\z/.match(input)
   end
     
 end
