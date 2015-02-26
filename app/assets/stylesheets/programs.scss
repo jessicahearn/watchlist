@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //VARS
-$DARK_BLUE: #00008B;
-$MED_BLUE: #4169E1;
+$DARK_BLUE: #003399/*#000066*//*#00008B*/;
+$MED_BLUE: #6685C2/*#8282B4*//*#4169E1*/;
+$LIGHT_BLUE: #CCD6EB/*#CACADF*/;
 
 $LIGHT_GREY: #DCDCDC;
 
@@ -13,6 +14,12 @@ $LIGHT_GREY: #DCDCDC;
 @mixin clearfix {
   overflow: auto;
   zoom: 1;
+}
+
+@mixin box-sizing($var) {
+  -webkit-box-sizing: $var; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: $var;    /* Firefox, other Gecko */
+  box-sizing: $var;         /* Opera/IE 8+ */
 }
 
 
@@ -70,11 +77,13 @@ a {
 
 //INDEX obj
 .index-item {
-  padding: 20px 0px;
   border-top: 1px solid $LIGHT_GREY;
+  /*vertical-align: top;*/
+  @include clearfix;
 }
 
 .index-item-title {
+  padding: 20px 0px;
   color: $DARK_BLUE;
 }
 
@@ -85,6 +94,28 @@ a {
 
 .index-item-part {
   padding: 10px; 
+}
+
+
+//GRID obj
+.grid {
+  @include clearfix;
+}
+
+.grid-col {
+  float: left;
+}
+
+@for $GRID-COLS from 1 through 12 {
+  .grid-col_#{$GRID-COLS}of12 {
+     width: percentage($GRID-COLS / 12)
+  }
+}
+
+
+//GETAWAY obj
+.getAway_top {
+  margin-top: 20px; 
 }
 
 
@@ -104,46 +135,69 @@ a {
   padding: 5px 10px;
   color: $MED_BLUE;
   background: $DARK_BLUE;
+  border: none;
 }
 
 
 
 //MARKER obj
 .marker {
-  /*height: 20px;*/
-}
-
-.marker-ep {
-  /*display: inline-block;*/
+  display: inline-block;
   position: relative;
-  width: 100px;
-  height: 20px;
+  width: 200px;
+  height: 18px;
   border: 1px solid #000000;
   margin-right: 0px;
   cursor: pointer;
 }
 
-.marker-ep_isCompleted {
-  background: $MED_BLUE;
+.marker-index {
+  display: block;
+  padding: 2px 0px 0px 2px; 
 }
 
-.marker-ep-trigger {
+.marker-trigger {
   display: block;
   position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
   height: 100%;
   width: 100%;
-  background: yellow;
-  opacity: 0.5;
+  /*background: yellow;*/
+  opacity: 0.0;
+  @include box-sizing(border-box);
 }
 
-.marker-ep-status {
+.marker-status {
   display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   height: 100%;
+  overflow: hidden;
+  
+  /*background: $MED_BLUE;*/
+  @include box-sizing(border-box);
+}
+
+.marker-status_program {
+  color: #ffffff;
+  background: $DARK_BLUE;
+}
+
+.marker-status_part {
+  color: #ffffff;
   background: $MED_BLUE;
+}
+
+.marker-status_episode {
+  color: $DARK_BLUE;
+  background: $LIGHT_BLUE;
 }
 
 @for $ELAPSED from 0 through 100 {
-  .marker-ep-status_#{$ELAPSED}of100 {
+  .marker-status_#{$ELAPSED}of100 {
     width: percentage($ELAPSED / 100);
   }
 }
@@ -161,4 +215,11 @@ a {
   color: #804C4C; 
   border: 1px solid #B26B6B;
   background: #FF9999; 
+}
+
+
+
+//UTILS
+.inline-block {
+  display: inline-block; 
 }

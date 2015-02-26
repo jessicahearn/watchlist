@@ -5,27 +5,36 @@
   <% @user.program_markers.each do |program_marker| %>
     <li class="js-accordion index-item">
       <% @program = Program.find(program_marker.program_id) %>
-      <span class="js-trigger index-item-title"><%= @program.title %></span>
-      <div class="index-item-controls">
-        <div class="marker-ep">
-          <%= link_to @program.title, '#', class: "marker-ep-trigger" %>
-          <div class="marker-ep-status marker-ep-status_50of100"></div>
+      <div class="index-item-title">
+        <span class="js-trigger"><%= @program.title %> (<%= format_as_timecode(time_elapsed_in_program(program_marker).to_f) %> / <%= format_as_timecode(total_time_in_program(@program)) %>)</span>
+        <div class="index-item-controls">
+          <div class="marker js-trigger">
+            <div class="marker-status marker-status_program marker-status_<%= ((time_elapsed_in_program(program_marker).to_f / total_time_in_program(@program)) * 100).round %>of100"></div>
+          </div>
         </div>
       </div>
-      <div><%= program_marker.notes %></div>
-      <ul class="">
-        <% program_marker.part_markers.each do |part_marker| %>
-          <li class="index-item-part">
-            <% @part = Part.find(part_marker.part_id) %>
-            <%= "#{@part.title} (#{pluralize(@part.episodes.count, 'episode')})" %>
-            <ul>
-              <li id="ajax-part-marker-<%= part_marker.id %>" class="marker">
-                <%= render ('users/episodes'), part_marker: part_marker %>
-              </li>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
+      <div class="js-panel">
+        <ul class="index-item-part">
+          <% program_marker.part_markers.each do |part_marker| %>
+            <li class="index-item">
+              <% @part = Part.find(part_marker.part_id) %>
+              <div class="index-item-title">
+                <%= @part.title %> (<%= format_as_timecode(time_elapsed_in_part(part_marker).to_f) %> / <%= format_as_timecode(total_time_in_part(@part)) %>)
+                <div class="index-item-controls">
+                  <span class="marker">
+                    <div class="marker-status marker-status_part marker-status_<%= ((time_elapsed_in_part(part_marker).to_f / total_time_in_part(@part)) * 100).round %>of100"></div>
+                  </span>
+                </div>
+              </div>
+              <ul>
+                <li id="ajax-part-marker-<%= part_marker.id %>">
+                  <%= render ('users/episodes'), part_marker: part_marker %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </li>
   <% end %>
 </ul>

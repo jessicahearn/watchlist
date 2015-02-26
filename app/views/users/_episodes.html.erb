@@ -1,17 +1,23 @@
 <% part_marker.episode_markers.joins(:episode).order("episodes.sequence_index asc").each do |episode_marker| %>
   <% @episode = Episode.find(episode_marker.episode_id) %>
-  
-
-  <div class="marker-ep">
-    <%= link_to @episode.sequence_index, toggle_completed_episode_marker_path(episode_marker), class: "marker-ep-trigger", remote: true %>
-    <div class="marker-ep-status marker-ep-status_<%= ((episode_marker.elapsed.to_f / @episode.time) * 100).round %>of100"></div>
+  <div class="index-item-part">
+    <div class="inline-block">  
+      <div class="marker">
+        <span class="marker-index"><%= @episode.sequence_index %></span>
+        <%= link_to @episode.sequence_index, toggle_completed_episode_marker_path(episode_marker), class: "marker-trigger", remote: true %>
+        <div class="marker-status marker-status_episode marker-status_<%= ((episode_marker.elapsed.to_f / @episode.time) * 100).round %>of100">
+          <span class="marker-index"><%= @episode.sequence_index %></span>
+        </div>
+      </div>
+    </div>
+    <div class="inline-block">
+      <%= form_for episode_marker, remote: true do |f| %>
+        <%= f.text_field :elapsed, class: "js-echo_#{episode_marker.id}", value: format_as_timecode(episode_marker.elapsed) %>
+        <span class="js-enter_<%= episode_marker.id %>"><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %>
+        <%= f.submit "Save", class: "js-echo-submit_#{episode_marker.id} btn" %>
+      <% end %>
+    </div>
   </div>
-  
-  <%= form_for episode_marker, remote: true do |f| %>
-    <%= f.text_field :elapsed, class: "js-echo_#{episode_marker.id}", value: format_as_timecode(episode_marker.elapsed) %>
-    <%= f.submit "Save", class: "js-echo-submit_#{episode_marker.id}" %>
-  <% end %>
-  <div><span class="js-enter_<%= episode_marker.id %>"><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %></div>
 
 <script>
   /*$(".js-enter_<%= episode_marker.id %>").val($(".js-enter_<%= episode_marker.id %>").html());

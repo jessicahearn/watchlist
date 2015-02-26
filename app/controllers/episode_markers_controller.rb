@@ -46,7 +46,7 @@ class EpisodeMarkersController < ApplicationController
   
   
   def timecode_format_valid(input)
-    /\A(\d:[0-5]|[0-5]?)\d:[0-5]\d\z/.match(input)
+    /\A(\d\d:[0-5]|\d:[0-5]|[0-5]?)\d:[0-5]\d\z/.match(input)
   end
     
 end
