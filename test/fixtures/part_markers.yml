@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 bem_marker_series1:
-  watch_marker: bem_marker
+  program_marker: bem_marker
   part: bem_series1
 
 bem_marker_movie:
-  watch_marker: bem_marker
+  program_marker: bem_marker
   part: bem_movie

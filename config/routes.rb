@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :programs
   resources :users
-  resources :watch_marker_episodes do
+  resources :episode_markers do
     get 'toggle_completed', on: :member
   end
 

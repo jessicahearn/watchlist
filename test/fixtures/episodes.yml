@@ -3,11 +3,11 @@
 bem_ep1:
   title: Episode 1
   description: New folks in town.
-  length: 3493
+  time: 3493
   part: bem_series1
 
 bem_ep2:
   title: Episode 2
   description: Other stuff happens
-  length: 2674
+  time: 2674
   part: bem_series1

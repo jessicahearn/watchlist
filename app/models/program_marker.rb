@@ -1,5 +1,5 @@
-class WatchMarker < ActiveRecord::Base
-  has_many :watch_marker_parts
+class ProgramMarker < ActiveRecord::Base
+  has_many :part_markers
   belongs_to :user
   belongs_to :program
   validates :user_id, presence: true

@@ -6,6 +6,5 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    #@episode_markers = WatchMarkerEpisode.joins(:episode).order("episodes.sequence_index asc")
   end
 end

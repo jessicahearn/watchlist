@@ -8,7 +8,7 @@ class EpisodeTest < ActiveSupport::TestCase
     #@part = @program.parts.create(title: 'Series 1')
     #@part.save
     @part = parts(:bem_series1)
-    @episode = @part.episodes.create(title: 'Episode 1', description: 'New folks in town', length: 3056)
+    @episode = @part.episodes.create(title: 'Episode 1', description: 'New folks in town', time: 3056)
   end
   
   test "should be valid" do

@@ -1,6 +1,6 @@
-class CreateWatchMarkers < ActiveRecord::Migration
+class CreateProgramMarkers < ActiveRecord::Migration
   def change
-    create_table :watch_markers do |t|
+    create_table :program_markers do |t|
       t.integer :user_id
       t.integer :program_id
       t.text :notes

@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class WatchMarkerTest < ActiveSupport::TestCase
+class ProgramMarkerTest < ActiveSupport::TestCase
   
   def setup
     @user = users(:kame)
     @program = programs(:bem)
-    @marker = @user.watch_markers.build(program_id: @program.id)
+    @marker = @user.program_markers.build(program_id: @program.id)
   end
   
   test "should be valid" do

@@ -1,9 +1,9 @@
-<% part_marker.watch_marker_episodes.joins(:episode).order("episodes.sequence_index asc").each do |episode_marker| %>
+<% part_marker.episode_markers.joins(:episode).order("episodes.sequence_index asc").each do |episode_marker| %>
   <% @episode = Episode.find(episode_marker.episode_id) %>
   
 
   <div class="marker-ep">
-    <%= link_to @episode.sequence_index, toggle_completed_watch_marker_episode_path(episode_marker), class: "marker-ep-trigger", remote: true %>
+    <%= link_to @episode.sequence_index, toggle_completed_episode_marker_path(episode_marker), class: "marker-ep-trigger", remote: true %>
     <div class="marker-ep-status marker-ep-status_<%= ((episode_marker.elapsed.to_f / @episode.time) * 100).round %>of100"></div>
   </div>
   

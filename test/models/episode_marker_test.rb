@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class WatchMarkerEpisodeTest < ActiveSupport::TestCase
+class EpisodeMarkerTest < ActiveSupport::TestCase
   
   def setup
     @episode = episodes(:bem_ep1)
-    @part_marker = watch_marker_parts(:bem_marker_series1)
-    @ep_marker = @part_marker.watch_marker_episodes.build(watch_marker_part_id: @part_marker.id, episode_id: @episode.id)
+    @part_marker = part_markers(:bem_marker_series1)
+    @ep_marker = @part_marker.episode_markers.build(part_marker_id: @part_marker.id, episode_id: @episode.id)
   end
   
   test "should be valid?" do
@@ -13,7 +13,7 @@ class WatchMarkerEpisodeTest < ActiveSupport::TestCase
   end
   
   test "should have watch marker part id" do
-    @ep_marker.watch_marker_part_id = nil
+    @ep_marker.part_marker_id = nil
     assert_not @ep_marker.valid?
   end
   

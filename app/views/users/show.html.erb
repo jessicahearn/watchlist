@@ -2,9 +2,9 @@
 <p>These are the shows that <%= @user.name %> is watching.</p>
 <%= link_to "Back to User Index", users_path, class: "btn" %>
 <ul class="index">
-  <% @user.watch_markers.each do |marker| %>
+  <% @user.program_markers.each do |program_marker| %>
     <li class="js-accordion index-item">
-      <% @program = Program.find(marker.program_id) %>
+      <% @program = Program.find(program_marker.program_id) %>
       <span class="js-trigger index-item-title"><%= @program.title %></span>
       <div class="index-item-controls">
         <div class="marker-ep">
@@ -12,9 +12,9 @@
           <div class="marker-ep-status marker-ep-status_50of100"></div>
         </div>
       </div>
-      <div><%= marker.notes %></div>
+      <div><%= program_marker.notes %></div>
       <ul class="">
-        <% marker.watch_marker_parts.each do |part_marker| %>
+        <% program_marker.part_markers.each do |part_marker| %>
           <li class="index-item-part">
             <% @part = Part.find(part_marker.part_id) %>
             <%= "#{@part.title} (#{pluralize(@part.episodes.count, 'episode')})" %>
