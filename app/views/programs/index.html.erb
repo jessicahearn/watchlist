@@ -4,10 +4,12 @@
 <ul class="index">
   <% @programs.each do |program| %>
     <li class="js-accordion index-item">
-      <span class="js-trigger index-item-title"><%= program.title %></span>
-      <div class="index-item-controls">
-        <%= link_to "Details", program_path(program), class: "btn" %>
-        <%= link_to "Watch", '#', class: "btn" %>
+      <div class="js-trigger index-item-title">
+        <%= program.title %>
+        <div class="index-item-controls">
+          <%= link_to "Details", program_path(program), class: "btn" %>
+          <%= link_to "Watch", '#', class: "btn" %>
+        </div>
       </div>
       <ul class="js-panel">
         <% program.parts.each do |part| %>
