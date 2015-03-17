@@ -2,4 +2,6 @@
   $('#flash_messages').html('<%= message.html_safe %>')
 <% end %>*/
 
-$("#ajax-part-marker-<%= @part_marker.id %>").html("<%= escape_javascript(render('users/episodes', part_marker: @part_marker)) %>");
+$("#ajax-part-episodes-<%= @part_marker.id %>").html("<%= escape_javascript(render('users/episode_markers', part_marker: @part_marker)) %>");
+
+EnterEchoView();

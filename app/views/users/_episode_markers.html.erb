@@ -1,6 +1,9 @@
 <% part_marker.episode_markers.joins(:episode).order("episodes.sequence_index asc").each do |episode_marker| %>
   <% @episode = Episode.find(episode_marker.episode_id) %>
   <div class="index-item-part">
+    <div class="inline-block">
+      <span><%= episode_marker.completed %></span>
+    </div>
     <div class="inline-block">  
       <div class="marker">
         <span class="marker-index"><%= @episode.sequence_index %></span>
@@ -12,9 +15,9 @@
     </div>
     <div class="inline-block">
       <%= form_for episode_marker, remote: true do |f| %>
-        <%= f.text_field :elapsed, class: "js-echo_#{episode_marker.id}", value: format_as_timecode(episode_marker.elapsed) %>
-        <span class="js-enter_<%= episode_marker.id %>"><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %>
-        <%= f.submit "Save", class: "js-echo-submit_#{episode_marker.id} btn" %>
+        <%= f.text_field :elapsed, id: "js-echo_#{episode_marker.id}", class: "js-echo", value: format_as_timecode(episode_marker.elapsed) %>
+        <span id="js-enter_<%= episode_marker.id %>" class="js-enter" contentEditable="true"><%= format_as_timecode(episode_marker.elapsed) %></span> / <%= format_as_timecode(@episode.time) %>
+        <%= f.submit "Save", id: "js-echo-submit_#{episode_marker.id}", class: "js-echo-submit btn" %>
       <% end %>
     </div>
   </div>

@@ -5,18 +5,37 @@ class EpisodeMarkersController < ApplicationController
     @episode = Episode.find(@episode_marker.episode_id)
     @part_marker = PartMarker.find(@episode_marker.part_marker_id)
     @program_marker = ProgramMarker.find(@part_marker.program_marker_id)
-    @user = User.find(@program_marker.user_id)
-    if timecode_format_valid(params[:episode_marker][:elapsed])
+    @user = User.find(@program_marker.user_id) 
+    case
+    when timecode_format_valid(params[:episode_marker][:elapsed])
       @episode_marker.elapsed = view_context.parse_timecode(params[:episode_marker][:elapsed])
       if !(@episode_marker.elapsed > @episode.time)
+        if (@episode_marker.elapsed == @episode.time)
+          @episode_marker.completed = true
+        else
+          @episode_marker.completed = false
+        end
         @episode_marker.save
       else
         flash[:danger] = "Please enter a valid timecode"
       end
-    elsif percent_format_valid(params[:episode_marker][:elapsed])
-      @episode_marker.elapsed = (@episode.time * view_context.percent_as_decimal(params[:episode_marker][:elapsed])).round
+    when percent_format_valid(params[:episode_marker][:elapsed])
+      @episode_marker.elapsed = (@episode.time * 
+        view_context.percent_as_decimal(params[:episode_marker][:elapsed])).round
+      if (@episode_marker.elapsed == @episode.time)
+        @episode_marker.completed = true
+      else
+        @episode_marker.completed = false
+      end
       @episode_marker.save
-      #puts 'working'
+    when two_digit_format_valid(params[:episode_marker][:elapsed])
+      @episode_marker.elapsed = (params[:episode_marker][:elapsed]).to_i
+      if (@episode_marker.elapsed == @episode.time)
+        @episode_marker.completed = true
+      else
+        @episode_marker.completed = false
+      end
+      @episode_marker.save
     else
       flash[:danger] = "Please enter a valid timecode"
     end
@@ -55,6 +74,10 @@ class EpisodeMarkersController < ApplicationController
   
   def percent_format_valid(input)
     /\A(100|\d?\d)%\z/.match(input)
+  end
+  
+  def two_digit_format_valid(input)
+    /\A[0-5]?\d\z/.match(input)
   end
     
 end

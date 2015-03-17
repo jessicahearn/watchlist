@@ -1,0 +1,6 @@
+                <%= @part.title %> (<%= format_as_timecode(time_elapsed_in_part(part_marker).to_f) %> / <%= format_as_timecode(total_time_in_part(@part)) %>)
+                <div class="index-item-controls">
+                  <span class="marker">
+                    <div class="marker-status marker-status_part marker-status_<%= ((time_elapsed_in_part(part_marker).to_f / total_time_in_part(@part)) * 100).round %>of100"></div>
+                  </span>
+                </div>
