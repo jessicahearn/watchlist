@@ -4,6 +4,7 @@ class EpisodeMarkersController < ApplicationController
     @episode_marker = EpisodeMarker.find(params[:id])
     @episode = Episode.find(@episode_marker.episode_id)
     @part_marker = PartMarker.find(@episode_marker.part_marker_id)
+    @part = Part.find(@part_marker.part_id)
     @program_marker = ProgramMarker.find(@part_marker.program_marker_id)
     @user = User.find(@program_marker.user_id) 
     case

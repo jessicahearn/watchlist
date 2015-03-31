@@ -4,4 +4,7 @@
 
 $("#ajax-part-episodes-<%= @part_marker.id %>").html("<%= escape_javascript(render('users/episode_markers', part_marker: @part_marker)) %>");
 
+/*this part isn't blocking or throwing an error anymore, but it's not actually updating either...*/
+$("ajax-part-marker-<%= @part_marker.id %>").html("<%= escape_javascript(render('users/part_marker', part_marker: @part_marker)) %>");
+
 EnterEchoView();
