@@ -3,8 +3,7 @@ class EpisodeMarkerService
   def initialize(params)
     @params = params
     set_related_objects
-    @elapsed_input = @params[:episode_marker][:elapsed]
-    @total_time = @episode.time
+    
   end
   
   def set_related_objects
@@ -15,6 +14,14 @@ class EpisodeMarkerService
     @program_marker = ProgramMarker.find(@part_marker.program_marker_id)
     @user = User.find(@program_marker.user_id)
   end
+    
+  def get_episode_marker
+    return @episode_marker
+  end
+  
+  def get_episode
+    return @episode
+  end
   
   def get_part_marker
     return @part_marker
@@ -24,7 +31,9 @@ class EpisodeMarkerService
     return @part
   end
   
-  def validate_update
+  def validate_timecode
+    @elapsed_input = @params[:episode_marker][:elapsed]
+    @total_time = @episode.time
     case
     when timecode_format_valid
       elapsed = FormatService.parse_timecode(@elapsed_input)
@@ -39,14 +48,13 @@ class EpisodeMarkerService
     else
       return false
     end
-    save_update
+    save_timecode
   end
   
-  def save_update
+  def save_timecode
     set_completed
     @episode_marker.save
   end
-  
   
   def set_completed
     if (@episode_marker.elapsed == @episode.time)
