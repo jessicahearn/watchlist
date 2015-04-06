@@ -22,5 +22,8 @@ module Watchlist
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # Turns off asset pipeline -- doesn't seem to be working?
+    # config.assets.enabled = false
   end
 end

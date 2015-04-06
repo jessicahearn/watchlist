@@ -6,7 +6,7 @@
     <li class="js-accordion index-item">
       <% @program = Program.find(program_marker.program_id) %>
       <div class="index-item-title">
-        <span class="js-trigger"><%= @program.title %> (<%= format_as_timecode(time_elapsed_in_program(program_marker).to_f) %> / <%= format_as_timecode(total_time_in_program(@program)) %>)</span>
+        <span class="js-trigger"><%= @program.title %> (<%= FormatService.format_as_timecode(time_elapsed_in_program(program_marker).to_f) %> / <%= FormatService.format_as_timecode(total_time_in_program(@program)) %>)</span>
         <div class="index-item-controls">
           <div class="marker js-trigger">
             <div class="marker-status marker-status_program marker-status_<%= ((time_elapsed_in_program(program_marker).to_f / total_time_in_program(@program)) * 100).round %>of100"></div>

@@ -5,13 +5,8 @@ class EpisodeMarkersController < ApplicationController
     timecode_saved = episode_marker_service.validate_timecode
     @part = episode_marker_service.get_part
     @part_marker = episode_marker_service.get_part_marker
-    
     if timecode_saved
-      #redirect_to @user
-      respond_to do |format|
-        format.html { redirect_to @user }
-        format.js
-      end
+      trigger_ajax_refresh
     else
       flash[:danger] = "Please enter a valid timecode"
     end
@@ -19,23 +14,20 @@ class EpisodeMarkersController < ApplicationController
   
   def toggle_completed
     episode_marker_service = EpisodeMarkerService.new(params)
-    @episode_marker = episode_marker_service.get_episode_marker
-    @episode = episode_marker_service.get_episode
-    @part_marker = episode_marker_service.get_part_marker
-    @episode_marker.toggle!(:completed)
-    if @episode_marker.completed
-      @episode_marker.elapsed = @episode.time
-    else
-      @episode_marker.elapsed = 0
-    end
-    @episode_marker.save
-    #redirect_to @user
-    respond_to do |format|
-      format.html { redirect_to @user }
-      format.js
-    end
+    episode_marker_service.toggle_completed
+    @part_marker = episode_marker_service.get_part_marker    
+    trigger_ajax_refresh
   end
   
-
-    
+  
+  private
+  
+    def trigger_ajax_refresh
+      respond_to do |format|
+        format.html { redirect_to @user }
+        format.js
+      end
+    end
+  
+  
 end
