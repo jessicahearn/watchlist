@@ -31,6 +31,9 @@ gem 'rspec-rails', '~> 3.0'
 # FactoryGirl for creating test data
 gem 'factory_girl_rails'
 
+# Adds functionality to RSpec to simplify common tests
+gem 'shoulda-matchers'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
