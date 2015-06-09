@@ -1,12 +1,10 @@
-RSpec.describe User do
+RSpec.describe User, type: :model do
   it { should validate_presence_of :name }
   it { should have_many :program_markers }
   
-  it "should have a name" do
+  it "should have a name and email" do
     user = FactoryGirl.create(:user)
-    
-    #its(:name) { should == 'Ryu Odagiri' }
     expect(user.name).to eq('Ryu Odagiri')
-    #its(:email) { should == 'prof@hangdogs.com' }
+    expect(user.email).to eq('prof@hangdogs.com')
   end
 end
