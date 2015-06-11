@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :episode_marker do
     association :episode, factory: :episode
-    part_marker_id '1984'
+    association :part_marker, factory: :part_marker
   end
 end
