@@ -25,5 +25,8 @@ module Watchlist
     
     # Turns off asset pipeline -- doesn't seem to be working?
     # config.assets.enabled = false
+
+    config.sass.load_paths << File.expand_path('../../lib/assets/stylesheets/')
+    config.sass.load_paths << File.expand_path('../../lib/assets/sass/')
   end
 end

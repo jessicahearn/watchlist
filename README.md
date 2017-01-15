@@ -7,9 +7,15 @@
 
 - bundle install
 - bundle exec rake db:create:all
-- bundle exec db:migrate
-- bundle exec db:seed
-- foreman start
+- bundle exec rake db:migrate
+- bundle exec rake db:seed
+- rails s
+
+Troubleshooting:
+
+If installing on El Capitan, eventmachine may fail during the bundle install. If so, try this:
+
+`gem install eventmachine -v '1.0.6' -- --with-cppflags=-I/usr/local/opt/openssl/include`
 
 
 * Project Description: Watchlist is an application intended to allow users to keep a database of TV series they are in the process of watching. The app stores a database of program information including names and descriptions, numbers of parts (generally series/seasons), numbers of episodes within each part, and information about each individual episode such as its length. When a user "watches" a program, it will be added to their watchlist, where they will be able to track additional information including whether or not an episode/part/program is completed, timestamps for episodes that are partially completed, and personal notes about individual programs/parts/episodes.
