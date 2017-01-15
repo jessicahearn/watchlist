@@ -1,5 +1,5 @@
 // Base & Helpers
-//@import 'base/reset';
+@import 'base/reset';
 @import 'helpers/vars';
 @import 'base/fonts';
 @import 'helpers/utils';
@@ -12,7 +12,9 @@
 // Modules
 @import 'modules/accordion/accordion_small';
 @import 'modules/alert/alert_small';
+@import 'modules/blocks/blocks_small';
 @import 'modules/btn/btn_small';
 @import 'modules/grid/grid_small';
+@import 'modules/imageWrapper/imageWrapper_small';
 @import 'modules/marker/marker_small';
 @import 'modules/vr/vr_small';

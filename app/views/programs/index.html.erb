@@ -1,30 +1,21 @@
 <h1>Program Index</h1>
 <p>These are all the programs you have to chose from!</p>
 
-<ul class="index">
+<div class="blocks blocks_3up">
   <% @programs.each do |program| %>
-    <li class="js-accordion index-item">
-      <div class="js-trigger index-item-title">
-        <%= program.title %>
-        <div class="index-item-controls">
-          <%= link_to "Details", program_path(program), class: "btn" %>
-          <%= link_to "Watch", '#', class: "btn" %>
-        </div>
-      </div>
-      <ul class="js-panel">
-        <% program.parts.each do |part| %>
-          <li class="index-item-part">
-            <%= "#{part.title} (#{pluralize(part.episodes.count, 'episode')})" %>
-            <ul>
-              <li>
-                <% part.episodes.each do |episode| %>
-                  <span><%= episode.title %></span>
-                <% end %>
-              </li>
-            </ul>
-          </li>
+    <div>
+      <div class="imageWrapper">
+        <% if !program.default_image.blank? %>
+          <%= image_tag program.default_image, alt: program.title %>
+        <% else %>
+          <%= image_tag program.placeholder_image, alt: program.title %>
         <% end %>
-      </ul>
-    </li>
+      </div>
+      <div class="hdg hdg_2"><%= program.title %></div>
+      <div>
+        <%= link_to "Details", program_path(program), class: "btn" %>
+        <%= link_to "Watch", '#', class: "btn" %>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
