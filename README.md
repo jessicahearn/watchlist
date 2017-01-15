@@ -4,11 +4,11 @@ Ruby Version: 2.1.2
 ## Project Setup
 Very standard setup. This project uses a postgresql database and the rails server, so all that should be necessary for setup is the following
 
-`bundle install`
-`bundle exec rake db:create:all`
-`bundle exec rake db:migrate`
-`bundle exec rake db:seed`
-`rails s`
+* `bundle install`
+* `bundle exec rake db:create:all`
+* `bundle exec rake db:migrate`
+* `bundle exec rake db:seed`
+* `rails s`
 
 Troubleshooting:
 

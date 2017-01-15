@@ -13,6 +13,7 @@ gem 'shoulda-matchers'
 gem 'pry-rails'
 gem 'rest_in_place'
 gem 'annotate'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug'
