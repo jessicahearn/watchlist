@@ -2,12 +2,13 @@
 #
 # Table name: programs
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :text
-#  format      :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :integer          not null, primary key
+#  title         :string
+#  description   :text
+#  format        :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  default_image :string
 #
 
 require "rails_helper"

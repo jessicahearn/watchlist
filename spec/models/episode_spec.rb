@@ -11,6 +11,10 @@
 #  updated_at     :datetime         not null
 #  sequence_index :integer
 #
+# Indexes
+#
+#  index_episodes_on_part_id  (part_id)
+#
 
 require "rails_helper"
 

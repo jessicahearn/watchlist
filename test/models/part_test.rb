@@ -8,6 +8,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_parts_on_program_id  (program_id)
+#
 
 require 'test_helper'
 

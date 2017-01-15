@@ -9,6 +9,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_program_markers_on_program_id  (program_id)
+#  index_program_markers_on_user_id     (user_id)
+#
 
 FactoryGirl.define do
   factory :program_marker do

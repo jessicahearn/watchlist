@@ -10,6 +10,11 @@
 #  completed      :boolean          default(FALSE)
 #  elapsed        :integer          default(0)
 #
+# Indexes
+#
+#  index_episode_markers_on_episode_id      (episode_id)
+#  index_episode_markers_on_part_marker_id  (part_marker_id)
+#
 
 class EpisodeMarker < ActiveRecord::Base
   belongs_to :part_marker

@@ -8,6 +8,11 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
+# Indexes
+#
+#  index_part_markers_on_part_id            (part_id)
+#  index_part_markers_on_program_marker_id  (program_marker_id)
+#
 
 class PartMarker < ActiveRecord::Base
   has_many :episode_markers
