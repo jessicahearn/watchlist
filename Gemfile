@@ -12,6 +12,7 @@ gem 'factory_girl_rails'
 gem 'shoulda-matchers'
 gem 'pry-rails'
 gem 'rest_in_place'
+gem 'annotate'
 
 group :development, :test do
   gem 'byebug'

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  email           :string
+#  password_digest :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 RSpec.describe User, type: :model do
   it { should validate_presence_of :name }
   it { should have_many :program_markers }

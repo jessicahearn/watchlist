@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: episodes
+#
+#  id             :integer          not null, primary key
+#  title          :string
+#  description    :text
+#  time           :integer
+#  part_id        :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  sequence_index :integer
+#
+
 require "rails_helper"
 
 RSpec.describe Episode do
