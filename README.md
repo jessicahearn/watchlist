@@ -29,4 +29,5 @@ Last Updated: 1/14/2017
 - Flesh out the program models with images and descriptions
 - Flesh out the user's marker models to allow for notes and other info
 - Overhaul the UI
+- Clean up JS and CSS
 - Deploy app to Heroku
