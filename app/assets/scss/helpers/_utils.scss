@@ -1,0 +1,17 @@
+//MIXINS
+@mixin clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+@mixin box-sizing($var) {
+  -webkit-box-sizing: $var; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: $var;    /* Firefox, other Gecko */
+  box-sizing: $var;         /* Opera/IE 8+ */
+}
+
+
+//UTILS
+.inline-block {
+  display: inline-block; 
+}

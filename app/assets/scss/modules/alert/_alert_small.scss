@@ -1,0 +1,12 @@
+//FLASHES (TODO: Refactor to a single alert object)
+.flash {
+  margin: 20px 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.danger {
+  color: #804C4C; 
+  border: 1px solid #B26B6B;
+  background: #FF9999; 
+}

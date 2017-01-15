@@ -1,0 +1,61 @@
+//MARKER obj
+.marker {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 18px;
+  border: 1px solid #000000;
+  margin-right: 0px;
+  cursor: pointer;
+}
+
+.marker-index {
+  display: block;
+  padding: 2px 0px 0px 2px; 
+}
+
+.marker-trigger {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  /*background: yellow;*/
+  opacity: 0.0;
+  @include box-sizing(border-box);
+}
+
+.marker-status {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  overflow: hidden;
+  
+  /*background: $MED_BLUE;*/
+  @include box-sizing(border-box);
+}
+
+.marker-status_program {
+  color: #ffffff;
+  background: $DARK_BLUE;
+}
+
+.marker-status_part {
+  color: #ffffff;
+  background: $MED_BLUE;
+}
+
+.marker-status_episode {
+  color: $DARK_BLUE;
+  background: $LIGHT_BLUE;
+}
+
+@for $ELAPSED from 0 through 100 {
+  .marker-status_#{$ELAPSED}of100 {
+    width: percentage($ELAPSED / 100);
+  }
+}

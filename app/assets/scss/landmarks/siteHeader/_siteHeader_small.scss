@@ -1,0 +1,19 @@
+//SITE-HD obj
+.site-hd {
+  padding: 10px;
+  color: #ffffff;
+  background: $DARK_BLUE;
+  @include clearfix;
+  //clearfix
+}
+
+.site-hd-logo {
+  display: inline-block;
+  font-size: 150%;
+  font-weight: bold; 
+}
+
+.site-hd-nav {
+  display: inline-block; 
+  float: right;
+}

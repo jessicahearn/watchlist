@@ -1,0 +1,14 @@
+//GRID obj
+.grid {
+  @include clearfix;
+}
+
+.grid-col {
+  float: left;
+}
+
+@for $GRID-COLS from 1 through 12 {
+  .grid-col_#{$GRID-COLS}of12 {
+     width: percentage($GRID-COLS / 12)
+  }
+}

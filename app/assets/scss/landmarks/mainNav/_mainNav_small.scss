@@ -1,0 +1,11 @@
+//mainNav obj
+.mainNav {
+  font-weight: bold;
+  @include clearfix;
+  //clearfix
+}
+
+.mainNav > * {
+  float: left;
+  padding: 5px 10px;
+}
